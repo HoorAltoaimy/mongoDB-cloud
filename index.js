@@ -24,6 +24,15 @@ app.get("/", (req, res) => {
   res.send("welcome to the express server");
 });
 
+app.get("/users", (req, res) => {
+  res.send({
+    users: [
+      {id: 1, name: 'x'},
+      {id: 2, name: 'y'}
+    ]
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`API listining on PORT ${PORT}`);
   connectDB();
